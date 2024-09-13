@@ -1,0 +1,39 @@
+body{
+background-image:url(images/Guapnet_background.png) ;
+
+
+}
+
+.background-2-1 {
+    background-image: url(images/stars.jpg);
+}
+
+.positioned-link-1 {
+    position: absolute; 
+    right: 350px;
+    top: 300px; 
+}
+
+.positioned-link-1 img {
+    width: 100px;  /* Adjust as needed */
+    height: auto;  /* This maintains the aspect ratio */
+}
+
+.Number21 {
+    position: absolute;
+    left: 115px;
+    width: 100px;
+    height: auto;
+}
+
+.description {
+width: 15em;
+height: auto;
+position: relative;
+top: 120px;
+}   
+
+h1 {
+color: antiquewhite;
+padding-left: 100px;
+}
