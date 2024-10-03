@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Oldwest';
+  src: url(Assets/OLDWEST.otf) format('opentype');
+}
+
+
 *,
 *::before,
 *::after {
@@ -5,7 +11,7 @@
 }
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'OldWest', sans-serif;
   background-image: url("Assets/background.png");
   background-color: #000000;
   background-position: center;
@@ -22,8 +28,8 @@ body {
 .timeline::after {
   content: '';
   position: absolute;
-  width: 2px;
-  background: #006E51;
+  width: 5px;
+  background: #171717;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -49,7 +55,7 @@ body {
   top: calc(50% - 8px);
   right: -8px;
   background: #ffffff;
-  border: 2px solid #006E51;
+  border: 2px solid #ffffff;
   border-radius: 16px;
   z-index: 1;
 }
@@ -59,11 +65,11 @@ body {
 .container::before {
   content: '';
   position: absolute;
-  width: 50px;
-  height: 2px;
+  width: 25px;
+  height: 5px;
   top: calc(50% - 1px);
   right: 8px;
-  background: #006E51;
+  background: #171717;
   z-index: 1;
 }
 .container.right::before {
@@ -73,10 +79,11 @@ body {
   position: absolute;
   display: inline-block;
   top: calc(50% - 8px);
+  padding-top: 50px;
   text-align: center;
   font-size: 14px;
   font-weight: bold;
-  color: #006E51;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1px;
   z-index: 1;
@@ -87,21 +94,7 @@ body {
 .container.right .date {
   left: -75px;
 }
-.container .icon {
-  position: absolute;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  padding: 9px 0;
-  top: calc(50% - 20px);
-  background: #F6D155;
-  border: 2px solid #006E51;
-  border-radius: 40px;
-  text-align: center;
-  font-size: 18px;
-  color: #006E51;
-  z-index: 1;
-}
+
 .container.left .icon {
   right: 56px;
 }
@@ -110,25 +103,27 @@ body {
 }
 .container .content {
   padding: 30px 90px 30px 30px;
-  background: #F6D155;
+  background: #580088;
   position: relative;
-  border-radius: 0 500px 500px 0;
+  border-radius: 500px 0px 500px 0px ;
+  box-shadow: #000000;
 }
 .container.right .content {
   padding: 30px 30px 30px 90px;
-  border-radius: 500px 0 0 500px;
+  border-radius: 0px 500px 0px 500px;
+  box-shadow: #000000;
 }
 .container .content h2 {
   margin: 0 0 10px 0;
   font-size: 18px;
-  font-weight: normal;
-  color: #006E51;
+  font-weight: bold;
+  color: #ffffff;
 }
 .container .content p {
   margin: 0;
   font-size: 16px;
   line-height: 22px;
-  color: #000000;
+  color: #ffffff;
 }
 @media (max-width: 767.98px) {
   .timeline::after {
@@ -149,7 +144,7 @@ body {
   .container.left::before,
   .container.right::before {
     left: 100px;
-    border-color: transparent #006E51 transparent transparent;
+    border-color: transparent #000000 transparent transparent;
   }
   .container.left .date,
   .container.right .date {
@@ -166,4 +161,35 @@ body {
     padding: 30px 30px 30px 90px;
     border-radius: 500px 0 0 500px;
   }
+}
+
+.play-button {
+background-color: #800dbd;
+border:none ;
+display: inline-block;
+padding: 15px 20px;
+text-align: center;
+font-size: 12px;
+border-radius: 25%;
+}
+
+.GlobalPause {
+background-color: #4d0e80;
+border:none ;
+display: inline-block;
+position: fixed;
+padding: 15px 20px;
+text-align: center;
+font-size: 34px;
+border-radius: 15%;
+color: #ffffff;
+}
+
+.play-button:hover {
+background-color: #dcd10f;
+cursor: pointer;
+}
+.GlobalPause:hover {
+background-color: #6b14b8;
+cursor: pointer;
 }
