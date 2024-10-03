@@ -1,5 +1,5 @@
 
-
+<img src="Assets/header.png" alt= "my my image" width="2000"  >
 ## Project Overview - Self As System
 
 This project focuses on reinterpreting personal data in a way that reflects the individual. It involves:
@@ -29,8 +29,10 @@ The project creates an interactive timeline using listening data from Spotify an
 
 ## Credits
 
-[To be added]
+Web Audio API - https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
 
-![My Image](./Assets/img.png)
+CHATGPT/CLAUDE were used for debugging but  also clarifications on code blocks when I got stuck
 
-<img src="./Assets/img.png" alt= "my my image" width="50"  >
+Timeline Base code - https://codepen.io/htmlcodex/pen/LYGjPgV
+
+reverb - https://blog.gskinner.com/archives/2019/02/reverb-web-audio-api.html
