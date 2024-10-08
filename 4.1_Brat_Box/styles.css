@@ -19,6 +19,8 @@ color: white;
 margin-left: 30%;
 margin-top: 25vh;
 font-size: 5vh;
+overflow: hidden;
+background-size: cover;
 }
 
 #bratbox video {
