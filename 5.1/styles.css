@@ -1,0 +1,8 @@
+.shadow-realm{
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 1px;
+    fill: orange;
+    filter: drop-shadow(0 0 9px purple);
+    transition: all 0.5 ease;
+
+}
