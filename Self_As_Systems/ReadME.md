@@ -24,6 +24,7 @@ The project creates an interactive timeline using listening data from Spotify an
 
 - **JavaScript scripting**
 - **User interactivity**
+- **Web Audio API** 
 - Integration of **Spotify** and **Apple** data
 - No external coding libraries used
 
