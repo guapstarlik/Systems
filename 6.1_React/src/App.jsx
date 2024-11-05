@@ -1,8 +1,27 @@
 import { Canvas, useLoader, useFrame } from "@react-three/fiber"
-import { Environment, OrbitControls, useGLTF, useTexture } from '@react-three/drei'
+import { Environment, OrbitControls, useGLTF, useTexture, Text } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useRef, useState } from 'react'
+
+ 
 import './App.css'
+
+function FloatingText() {
+  return (
+    <Text
+      position={[0, -5, -5]}
+      scale={[5, 5, 5]}
+      rotation={[0, 0, 45]}
+      color="white" 
+      fontSize={1} 
+      maxWidth={10} 
+      lineHeight={1} 
+      textAlign="center" 
+    >
+      COME UP!!!
+    </Text>
+  )
+}
 
 function RotatingBox() {
   const meshRef = useRef(null)
@@ -16,6 +35,7 @@ function RotatingBox() {
   })
 
   return (
+    
     <mesh
       ref={meshRef}
       rotation={[0.5, 0.5, 0]}
@@ -27,11 +47,12 @@ function RotatingBox() {
       <boxGeometry />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
+    
   )
 }
 
 function Saucer() {
-  const gltf = useLoader(GLTFLoader, '/Models/ufo.glb')
+  const gltf = useLoader(GLTFLoader, `${import.meta.env.BASE_URL}/Models/ufo.glb`)
   const ufoRef = useRef(null)
   const [elapsedTime, setElapsedTime] = useState(0)
 
@@ -78,6 +99,7 @@ function App() {
 
         <Saucer />
         <RotatingBox />
+        <FloatingText />
         <OrbitControls />
       </Canvas>
     </div>
