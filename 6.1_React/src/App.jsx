@@ -1,7 +1,7 @@
 import { Canvas, useLoader, useFrame } from "@react-three/fiber"
 import { Environment, OrbitControls, useGLTF, useTexture, Text } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { useRef, useState } from 'react'
+import { useRef, useState, Suspense } from 'react'
 
  
 import './App.css'
@@ -55,24 +55,24 @@ function Saucer() {
   const gltf = useLoader(GLTFLoader, `${import.meta.env.BASE_URL}/Models/ufo.glb`)
   const ufoRef = useRef(null)
   const [elapsedTime, setElapsedTime] = useState(0)
-
-  useFrame((state, delta) => {
-    if (ufoRef.current) {
+console.log(gltf)
+  // useFrame((state, delta) => {
+  //   if (ufoRef.current) {
  
-      setElapsedTime(prev => prev + delta)
+  //     setElapsedTime(prev => prev + delta)
       
       
-      ufoRef.current.position.y = 10 + Math.sin(elapsedTime * 2) * 0.5 
+  //     ufoRef.current.position.y = 10 + Math.sin(elapsedTime * 2) * 0.5 
       
-      const baseScale = 0.1
-      const scaleOffset = Math.sin(elapsedTime * 3) * 0.01 
-      ufoRef.current.scale.set(
-        baseScale + scaleOffset,
-        baseScale + scaleOffset,
-        baseScale + scaleOffset
-      )
-    }
-  })
+  //     const baseScale = 0.1
+  //     const scaleOffset = Math.sin(elapsedTime * 3) * 0.01 
+  //     ufoRef.current.scale.set(
+  //       baseScale + scaleOffset,
+  //       baseScale + scaleOffset,
+  //       baseScale + scaleOffset
+  //     )
+  //   }
+  // })
 
   return <primitive 
     ref={ufoRef}
@@ -96,8 +96,10 @@ function App() {
         distance={20}
         target-position={[-50, -50, -50]} // Points toward ground
       />
-
+      <Suspense fallback={null}>
         <Saucer />
+      </Suspense>
+        
         <RotatingBox />
         <FloatingText />
         <OrbitControls />

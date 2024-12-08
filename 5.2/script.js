@@ -1,3 +1,19 @@
+async function fetchNYCData() {
+    try {
+      const response = await fetch('https://data.cityofnewyork.us/resource/ia2d-e54m.json');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching NYC data:', error);
+      return [];
+    }
+  }
+
+// Prepare and visualize the data
+async function visualizeNYCData() {
+    // Fetch the data
+    const data = await fetchNYCData();
+
 // set the dimensions and margins of the graph
 const margin = {top: 10, right: 30, bottom: 30, left: 40},
     width = 460 - margin.left - margin.right,
@@ -11,6 +27,7 @@ const svg = d3.select("#my_dataviz")
   .append("g")
     .attr("transform",
           `translate(${margin.left},${margin.top})`);
+          
  // X axis: scale and draw:
  const x = d3.scaleLinear()
  .domain([0, 1000])     // can use this instead of 1000 to have the max of data: d3.max(data, function(d) { return +d.price })
@@ -44,3 +61,4 @@ svg.selectAll("rect")
   .attr("width", function(d) { return x(d.x1) - x(d.x0) -1})
   .attr("height", function(d) { return height - y(d.length); })
   .style("fill", "#69b3a2")
+
